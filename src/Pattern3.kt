@@ -1,16 +1,15 @@
 fun main(){
-    print("enter row size: ")
+    print("enter the row size: ")
     val row = readLine()!!.toInt()
 
-    for(i in 0 until row){
-        for(j in 0 until row-i){
+    for(i in 1 .. row){
+        for(j in i until row){
             print("  ")
         }
-        for(j in 0 .. i){
-            print(" " + i+j)
-        }
-        for(j in 0 until i){
-            print(" " + i+j)
+        var firstDigit = 1
+        for(j in 1 .. i){
+            print("  $firstDigit ")
+            firstDigit = firstDigit * (i-j)/j
         }
         println()
     }
